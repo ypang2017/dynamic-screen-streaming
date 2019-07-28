@@ -42,6 +42,18 @@
             <artifactId>spark-streaming-kafka-0-8_2.11</artifactId>
             <version>${spark}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.yuyu.stream</groupId>
+            <artifactId>screen-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.38</version>
+        </dependency>
     </dependencies>
 
     <build>
