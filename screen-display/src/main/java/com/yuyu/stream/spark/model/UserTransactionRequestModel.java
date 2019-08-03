@@ -1,6 +1,6 @@
 package com.yuyu.stream.spark.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import org.codehaus.jackson.annotate.JsonProperty;
 
 import java.util.List;
 
@@ -41,7 +41,7 @@ public class UserTransactionRequestModel extends BaseModel {
         return singleUserTransactionRequestModelList;
     }
 
-    public void setSingleUserTransactionRequestModelList(List<SingleUserTransactionRequestModel> singleSystemTransactionRequestModelList) {
+    public void setSingleUserTransactionRequestModelList(List<SingleUserTransactionRequestModel> singleUserTransactionRequestModelList) {
         this.singleUserTransactionRequestModelList = singleUserTransactionRequestModelList;
     }
 

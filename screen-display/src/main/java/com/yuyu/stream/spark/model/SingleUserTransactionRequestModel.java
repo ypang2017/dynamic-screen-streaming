@@ -1,6 +1,6 @@
 package com.yuyu.stream.spark.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import org.codehaus.jackson.annotate.JsonProperty;
 
 /**
  * @author yuyu
@@ -11,8 +11,8 @@ public class SingleUserTransactionRequestModel {
     @JsonProperty("system")
     private String systemName;
 
-    @JsonProperty("transationsum")
-    private long transationSum;
+    @JsonProperty("transactionsum")
+    private long transactionSum;
 
     public String getSystemName() {
         return systemName;
@@ -23,10 +23,10 @@ public class SingleUserTransactionRequestModel {
     }
 
     public long getTransationSum() {
-        return transationSum;
+        return transactionSum;
     }
 
     public void setTransationSum(long transationSum) {
-        this.transationSum = transationSum;
+        this.transactionSum = transationSum;
     }
 }
