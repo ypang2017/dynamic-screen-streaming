@@ -11,6 +11,9 @@ public class BaseDao {
     private static String user = "dynamic_screen";
     private static String password = "dynamic_screen";
 
+    Connection conn = null;
+    PreparedStatement pstmt = null;
+
     static {
         try {
             Class.forName(driver);
@@ -36,8 +39,6 @@ public class BaseDao {
     }
 
     public int executeSQL(String preparedSql, Object[] param) throws ClassNotFoundException {
-        Connection conn = null;
-        PreparedStatement pstmt = null;
         /* 处理SQL,执行SQL */
         try {
             conn = getConnection();
