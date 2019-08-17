@@ -1,4 +1,4 @@
-package com.djt.spark.monitor;
+package com.yuyu.stream.spark.monitor;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
@@ -6,9 +6,13 @@ import org.apache.hadoop.fs.Path;
 import org.apache.log4j.Logger;
 import org.apache.spark.streaming.StreamingContextState;
 import org.apache.spark.streaming.api.java.JavaStreamingContext;
+
 import java.net.URI;
 import java.util.Properties;
 
+/**
+ * @author yuyu
+ */
 public class MonitorStopThread implements Runnable {
   private Logger log = Logger.getLogger(MonitorStopThread.class);
 
@@ -79,7 +83,7 @@ public class MonitorStopThread implements Runnable {
         if (state == StreamingContextState.ACTIVE) {
           javaStreamingContext.stop(true, true);
         } else if (state == StreamingContextState.STOPPED) {
-          log.info("hdfs stop path exists,streaming be stoped");
+          log.info("hdfs stop path exists,streaming has been stopped");
           break;
         }
       }

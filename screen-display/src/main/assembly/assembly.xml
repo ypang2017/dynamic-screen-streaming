@@ -21,17 +21,17 @@
     <includeBaseDirectory>true</includeBaseDirectory>
     <fileSets>
         <fileSet>
-            <directory>${basedir}/user-behavior-streaming/bin</directory>
+            <directory>${basedir}/bin</directory>
             <outputDirectory>bin</outputDirectory>
             <fileMode>0755</fileMode>
         </fileSet>
         <fileSet>
-            <directory>${basedir}/user-behavior-streaming/conf</directory>
+            <directory>${basedir}/conf</directory>
             <outputDirectory>conf</outputDirectory>
             <fileMode>0644</fileMode>
         </fileSet>
         <fileSet>
-            <directory>${basedir}/user-behavior-streaming/logs</directory>
+            <directory>${basedir}/logs</directory>
             <outputDirectory>logs</outputDirectory>
             <fileMode>0644</fileMode>
         </fileSet>
