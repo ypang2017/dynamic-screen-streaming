@@ -9,6 +9,7 @@ import com.yuyu.stream.spark.model.ConsumeOffsetModel;
 import com.yuyu.stream.spark.model.SingleUserTransactionRequestModel;
 import com.yuyu.stream.spark.model.UserTransactionAmountModel;
 import com.yuyu.stream.spark.model.UserTransactionRequestModel;
+import com.yuyu.stream.spark.monitor.MonitorStopThread;
 import com.yuyu.stream.spark.service.ConsumeOffsetService;
 import com.yuyu.stream.spark.service.impl.MysqlTransactionAmountService;
 import kafka.common.TopicAndPartition;
@@ -55,6 +56,11 @@ public class ScreenMessageStreaming {
         //如果checkpointPath hdfs目录下有文件，则反序列化文件生成context,否则使用函数createContext返回的context对象
         JavaStreamingContext javaStreamingContext = JavaStreamingContext.getOrCreate(checkpointPath, createContext(serverProps));
         javaStreamingContext.start();
+
+        //每隔20秒钟监控是否有停止指令,如果有则优雅退出streaming
+        Thread thread = new Thread(new MonitorStopThread(javaStreamingContext, serverProps));
+        thread.start();
+
         javaStreamingContext.awaitTermination();
 
     }
